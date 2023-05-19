@@ -13,6 +13,6 @@ jobs:
       - name: deploy-prod
         run: |
           echo "hellow"
-          echo 'HOSTNAME=${{ secrets.HOSTNAME }}' >> .env
-          cat .env
+          echo 'HOSTNAME=${{ secrets.HOSTNAME }}' >> hello.txt
+          cat hello.txt
 
