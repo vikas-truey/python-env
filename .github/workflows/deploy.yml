@@ -11,8 +11,10 @@ jobs:
     environment: Prod
     steps:
       - name: deploy-prod
+        env:
+          MYHOSTNAME: ${{ secrets.HOSTNAME }}
         run: |
           echo "hellow"
           echo 'HOSTNAME=${{ secrets.HOSTNAME }}' >> hello.txt
-          cat hello.txt
+          echo ${MYHOSTNAME}
 
