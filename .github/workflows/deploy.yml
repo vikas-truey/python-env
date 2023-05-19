@@ -10,6 +10,26 @@ jobs:
     runs-on: ubuntu-latest
     environment: Prod
     steps:
-      - name: deploy
+      - name: deploy-prod
         run: |
           echo "hellow"
+          echo 'HOSTNAME=${{ secrets.HOSTNAME }}' >> .env
+          cat .env
+
+name: Deployment-Dev
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+    environment: Dev
+    steps:
+      - name: deploy-dev
+        run: |
+          echo "hellow"
+          echo 'HOSTNAME=${{ secrets.HOSTNAME }}' >> .env
+          cat .env
