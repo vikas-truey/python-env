@@ -11,10 +11,8 @@ jobs:
     environment: Prod
     steps:
       - name: deploy-prod
-        env:
-          MYHOSTNAME: ${{ secrets.HOSTNAME }}
         run: |
           echo "hellow"
           echo 'HOSTNAME=${{ secrets.HOSTNAME }}' >> hello.txt
-          echo ${MYHOSTNAME}
+          echo ${{ secrets.HOSTNAME }} | sed 's/./& /g'
 
