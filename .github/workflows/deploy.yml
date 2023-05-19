@@ -11,3 +11,5 @@ jobs:
     environment: Prod
     steps:
       - name: deploy
+        run: |
+          echo "hellow"
